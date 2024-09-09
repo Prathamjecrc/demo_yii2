@@ -16,7 +16,8 @@ class TestController extends Controller{
     public function actionHome(){
         $this->layout = "index";
 
-        $data=Yii::$app->db->createCommand("select * from subject inner join student on subject.student_id=student.id where subject.student_id=2;")->queryAll();
+        $data=Yii::$app->db->createCommand("select * from subject inner join student on subject.student_id=student.id where subject.student_id=2;")
+        ->queryAll();
         // print_r($data);die;
         return $this->render("home",['data'=>$data]);
         $basic="pratham";
